@@ -1,0 +1,58 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup--inner {
+  position: relative;
+  padding: 32px;
+  width: 60%;
+  background-color: white;
+  box-shadow: 2px 3px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 2rem;
+  text-align: left;
+}
+
+.popup--inner .close--btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 1.2em;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  background-color: rgb(253, 131, 109);
+  border-radius: 0.5rem;
+}
+
+.popup--inner .close--btn:hover {
+  background-color: rgb(253, 50, 14);
+}
+
+.popup--inner .naziv--opis {
+  background-color: rgba(5, 4, 4, 0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 0.2rem;
+  border-end-start-radius: 1rem;
+  border-top-right-radius: 5rem;
+}
+
+.popup--inner .naziv--opis h2 {
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgb(138, 32, 13);
+}
+
+.ostali--podaci {
+  padding: 1px 15px;
+  box-shadow: 2px 3px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  font-size: small;
+}
