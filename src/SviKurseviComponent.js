@@ -1,28 +1,17 @@
-import React, { useRef } from 'react';
-import { useEffect, useState } from 'react';
-import { db } from './firebase-config'
-import { collection, doc, getDocs } from 'firebase/firestore'
+import React, { useEffect } from 'react';
+import { useState } from 'react';
 import { Popup } from './Popup';
 import './Popup.css';
+import { Hero } from './Hero'
 
-export function SviKurseviComponent({ prosledjenaKorpa}) {
+export function SviKurseviComponent({ prosledjenaKorpa, prosledjeniKursevi}) {
 
     const [korpa, setKorpa] = prosledjenaKorpa
     const [btnPopup, setBtnPopup] = useState(false)
-    const [kursevi, setKursevi] = useState([])
-    const firestoreUsersCollectionRef = collection(db, "kursevi")
+    const [kursevi, setKursevi] = prosledjeniKursevi
     const [tacnoTajKurs, setTacnoTajKurs] = useState({})
 
-    useEffect(() => {
 
-        const funk = async () => {
-            const data = await getDocs(firestoreUsersCollectionRef);
-            setKursevi(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-        }
-
-        funk();
-
-    }, [])
 
     function dodajUKorpu(idKursa) {
         if (!korpa.includes(idKursa))
@@ -33,14 +22,16 @@ export function SviKurseviComponent({ prosledjenaKorpa}) {
         setBtnPopup(true)
         setTacnoTajKurs(kursevi.find(e => e.id === idKursa))
     }
-    
+
 
 
     return (
     <div style={{position: "relative"}}>
+        <Hero />
         
         <div className="card-grid">
-                <a class="dodajKursBtn" href="novikurs">Dodaj</a>
+                <a className="dodajKursBtn" href="novikurs">Dodaj</a>
+                <a className="korpaBtn" href="korpa">Korpa {korpa.length}</a>
             {kursevi.map((kurs) => {
                 return (
                     <div className="kartica" key={kurs.id}>

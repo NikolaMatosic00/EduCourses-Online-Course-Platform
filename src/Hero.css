@@ -1,0 +1,47 @@
+.traka {
+  position: relative;
+  overflow: hidden;
+  margin-top: 25px;
+  width: 100%;
+  height: 40vh;
+  background-color: white;
+  box-shadow: 2px 8px 25px #baabff;
+  text-align: center;
+}
+
+.traka h1 {
+  position: relative;
+  top: 14%;
+  font-size: 4rem;
+  z-index: 2;
+}
+
+.plava {
+  width: 1000px;
+  height: 1000px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: #baabff;
+  box-shadow: 2px 4px 25px #baabff;
+  top: 20px;
+  right: -250px;
+}
+
+.narandzasta {
+  width: 1000px;
+  height: 1000px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: rgb(255, 123, 0);
+  box-shadow: -2px -4px 25px rgb(255, 123, 0);
+  bottom: 20px;
+  left: -400px;
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    margin-top: -20px;
+    font-size: 3rem;
+    color: white;
+  }
+}

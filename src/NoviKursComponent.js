@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { db } from './firebase-config'
-import { collection, getDocs, addDoc } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 import './NoviKurs.css';
 
 export const NoviKursComponent = () => {
@@ -64,9 +64,8 @@ export const NoviKursComponent = () => {
             }
 
             saljiUBazu(test)
-            alert("Uspesno ste dodali novi kurs")
+            alert("Uspesno ste dodali novi kurs (windows.location push ne radi :/ iz nekog razloga)")
             console.log(kurs)
-            // window.location.assign("/pozdrav");
 
 
         }
@@ -75,7 +74,9 @@ export const NoviKursComponent = () => {
 
 
     return (
-        <div>
+        <div className='sve-novi-kurs'>
+            <div className="narandzasta-novi-kurs"></div>
+            <div className="plava-novi-kurs"></div>
             <div className="kartica-dodavanje">
                 <h2 className="naslov">Novi Kurs</h2>
                     <div className="sve-ostalo">
@@ -138,8 +139,8 @@ export const NoviKursComponent = () => {
                                 </div>
 
                                 <br />
-                                <button className="btn btn-success" style={{ margin: 5 }} onClick={napravi}>Gotov</button>
-                                <button className="btn btn-danger" onClick={cancel}>Cancel</button>
+                                <button className="btn-nazad" onClick={cancel}>Nazad</button>
+                                <button className="btn-dodaj" style={{ margin: 5 }} onClick={napravi}>Dodaj</button>
 
                         </div>
                     </div>

@@ -15,13 +15,12 @@ export function HeaderComponent() {
 
     return (<div>
         
-            <div class="topnav" id="myTopnav">
-                <a href="kursevi" class="active">Kursevi</a>
-                <a href="#news">News</a>
-                <a href="#contact">Contact</a>
-                <a href="#about">About</a>
-            <a class="meni" onClick={myFunction}>
-                    <i class="fa fa-bars">MENI</i>
+            <div className="topnav" id="myTopnav">
+            <a href="/" className="active">Kursevi</a>
+                <a href="korpa">Korpa</a>
+                <a href="korisnici">Korisnici</a>
+            <a className="meni" onClick={myFunction}>
+                <i className="fa fa-bars">MENI</i>
                 </a>
             </div>
     </div>);
