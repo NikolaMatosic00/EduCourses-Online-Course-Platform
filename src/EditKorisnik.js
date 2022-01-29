@@ -12,7 +12,7 @@ export function EditKorinik(props) {
     const usersCollectionRef = collection(db, "korisnici")
     
     const saljiUBazu = async () => {
-        const userDoc = doc(usersCollectionRef, props.idK)
+        const userDoc = doc(usersCollectionRef, props.idK.id)
         await updateDoc(userDoc, { email: email.current.value, telefon: brojTelefona.current.value});
         props.setTriggered(false)
         props.setRefreshKorisnike(prevCount => prevCount + 1)
@@ -23,8 +23,8 @@ export function EditKorinik(props) {
             <div className="popup--inner-login">
                 <button className='close--btn' onClick={() => props.setTriggered(false)}>X</button>
                 <div className="korisnicko-sifra">
-                    <input ref={email} placeholder={props.idK} className="form-control" />
-                    <input ref={brojTelefona} placeholder="Novi broj telefona.." className="form-control" />
+                    <input defaultValue={props.idK.email} ref={email} placeholder={props.idK} className="form-control" />
+                    <input defaultValue={props.idK.telefon} ref={brojTelefona} placeholder="Novi broj telefona.." className="form-control" />
                     <button onClick={() => saljiUBazu()}>Promeni</button>
                 </div>
             </div>

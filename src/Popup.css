@@ -57,3 +57,20 @@
   border-radius: 1rem;
   font-size: small;
 }
+
+@media screen and (max-width: 580px) {
+  .popup--inner .naziv--opis {
+    font-size: small;
+  }
+  .popup--inner .naziv--opis h2 {
+    padding-bottom: 10px;
+    font-size: medium;
+  }
+
+  .ostali--podaci {
+    padding: 1px 15px;
+    box-shadow: 2px 3px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    font-size: x-small;
+  }
+}

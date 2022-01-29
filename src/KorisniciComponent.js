@@ -8,7 +8,11 @@ export function KorisniciComponent({ prosledjeniKorisnici, firestoreKorisniciCol
     const [korisnici, setKorisnici] = prosledjeniKorisnici;
     const [refreshKorisnike, setRefreshKorisnike] = obnoviKorisnike
     const [popupTriggered, setPopupTriggered] = useState(false)
-    const [idKorisnikaKojiSeMenja, setIdKorisnikaKojiSeMenja] = useState(0)
+    const [korisnikKojiSeMenja, setKorisnikKojiSeMenja] = useState({
+        id: "",
+        email: "",
+        telefon: ""
+    })
 
     const obrisiKorisnikaIzBaze = async (id) => {
         await deleteDoc(doc(firestoreKorisniciCollectionRef, id))
@@ -16,13 +20,13 @@ export function KorisniciComponent({ prosledjeniKorisnici, firestoreKorisniciCol
         alert("Uspesno obrisan korisnik")
     } 
 
-    const otvoriPopupPromenaKorisnika = (id) => {
-        setIdKorisnikaKojiSeMenja(id);
+    const otvoriPopupPromenaKorisnika = (id, email, telefon) => {
+        setKorisnikKojiSeMenja({id: id, email: email, telefon: telefon});
         setPopupTriggered(true)
     }
 
   return (<div> 
-      <EditKorinik setRefreshKorisnike={setRefreshKorisnike} triggered={popupTriggered} setTriggered={setPopupTriggered} idK={idKorisnikaKojiSeMenja}/>
+      <EditKorinik setRefreshKorisnike={setRefreshKorisnike} triggered={popupTriggered} setTriggered={setPopupTriggered} idK={korisnikKojiSeMenja}/>
       <div className="kartica-svih-korisnika">
 
           <table className='tabela-korisnika'>
@@ -51,7 +55,7 @@ export function KorisniciComponent({ prosledjeniKorisnici, firestoreKorisniciCol
                                       <button onClick={() => obrisiKorisnikaIzBaze(korisnik.id)} className='btn-ukloni-promeni'>Ukloni</button>
                                   </td>
                                   <td>
-                                      <button onClick={() => otvoriPopupPromenaKorisnika(korisnik.id)} className='btn-ukloni-promeni'>Promeni</button>
+                                      <button onClick={() => otvoriPopupPromenaKorisnika(korisnik.id, korisnik.email, korisnik.telefon)} className='btn-ukloni-promeni'>Promeni</button>
                                   </td>
                               </tr>
                       )
