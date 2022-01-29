@@ -22,6 +22,7 @@ export function LoginComponent(props) {
             alert("Takav ne postoji")
         } else{
             setPrijavljeniKorisnik(pronadjeni[0])
+            localStorage.setItem("prijavljen", "da")
             props.setTriggered(false)
         }
 
