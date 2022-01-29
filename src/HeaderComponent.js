@@ -31,8 +31,11 @@ export function HeaderComponent({ loginPopupState, prijavljeniKorisnikState}) {
             
             {localStorage.getItem("prijavljen") ? "" : <a href="registracija">Registracija</a>}
             {localStorage.getItem("prijavljen") ? "" : <a onClick={() => setLoginPopup(true)}>Login</a>}
+            {localStorage.getItem("prijavljen") ? <a href='mojnalog'>Moj Nalog</a> : ""}
             {localStorage.getItem("prijavljen") ? <a onClick={() => izlogujReloaduj()}>Log out</a> : ""}
-                
+
+
+            
             <a className="meni" onClick={myFunction}>
                 <i className="fa fa-bars">MENI</i>
                 </a>
