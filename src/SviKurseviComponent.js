@@ -4,7 +4,7 @@ import { Popup } from './Popup';
 import './Popup.css';
 import { Hero } from './Hero'
 
-export function SviKurseviComponent({ prosledjenaKorpa, prosledjeniKursevi}) {
+export function SviKurseviComponent({ prosledjenaKorpa, prosledjeniKursevi, prijavljeniKorisnikState}) {
 
     const [korpa, setKorpa] = prosledjenaKorpa
     const [btnPopup, setBtnPopup] = useState(false)
@@ -27,7 +27,7 @@ export function SviKurseviComponent({ prosledjenaKorpa, prosledjeniKursevi}) {
 
     return (
     <div style={{position: "relative"}}>
-        <Hero />
+            <Hero prijavljeniKorisnikStateT={prijavljeniKorisnikState} />
         
         <div className="card-grid">
                 <a className="dodajKursBtn" href="novikurs">Dodaj</a>

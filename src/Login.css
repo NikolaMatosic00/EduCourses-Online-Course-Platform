@@ -1,0 +1,102 @@
+/* popup-login
+popup--inner-login
+close--btn
+korisnicko-sifra
+korisnicko-kif
+lozinka-kif */
+
+.popup-login {
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup--inner-login {
+  position: relative;
+  padding: 32px;
+  width: 50%;
+  background-color: white;
+  box-shadow: 2px 3px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 2rem;
+  text-align: left;
+}
+
+.popup--inner-login .close--btn {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 1.2em;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  background-color: rgb(253, 131, 109);
+  border-radius: 2rem;
+}
+
+.popup--inner-login .close--btn:hover {
+  background-color: rgb(253, 50, 14);
+}
+
+.korisnicko-sifra {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px;
+  padding-top: 25px;
+}
+
+.korisnicko-sifra input {
+  margin-bottom: 45px;
+  padding: 5px 10px;
+  border: none;
+  border-bottom: 1px solid gray;
+  text-align: center;
+  transition: 1s ease;
+  outline: none;
+}
+
+.korisnicko-sifra input:focus {
+  border-bottom: 1px solid rgb(253, 131, 109);
+}
+
+.korisnicko-sifra button {
+  margin: auto;
+  background-color: rgb(253, 131, 109);
+  padding: 15px 45px;
+  color: white;
+  border-radius: 1rem;
+  border: none;
+  font-size: medium;
+  cursor: pointer;
+}
+
+.korisnicko-sifra button:hover {
+  background-color: rgb(255, 92, 64);
+}
+
+/* .popup--inner .naziv--opis {
+  background-color: rgba(5, 4, 4, 0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 0.2rem;
+  border-end-start-radius: 1rem;
+  border-top-right-radius: 5rem;
+}
+
+.popup--inner .naziv--opis h2 {
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgb(138, 32, 13);
+}
+
+.ostali--podaci {
+  padding: 1px 15px;
+  box-shadow: 2px 3px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  font-size: small;
+} */

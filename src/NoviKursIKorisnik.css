@@ -60,6 +60,21 @@ jedna-grupa */
   font-family: 'Dongle', sans-serif;
 }
 
+.naslov-registracija{
+  color: white;
+  /* background-color: rgb(253, 50, 14); */
+  background-image: linear-gradient(
+    to top right,
+    #baabff,
+    #8e75ff
+  );
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 2rem;
+  font-size: 70px;
+  font-weight: 800;
+  font-family: 'Dongle', sans-serif;
+}
+
 .sve-ostalo {
   margin: 25px;
   padding-bottom: 10px;

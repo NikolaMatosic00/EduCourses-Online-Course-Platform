@@ -42,4 +42,35 @@
 
 .btn-ukloni-promeni:hover {
   background-color: #b2a1fc;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1090px) {
+  .tabela-korisnika thead tr td {
+    padding: 5px;
+  }
+  .tabela-korisnika tbody tr td {
+    padding: 2px 5px;
+  }
+  .btn-ukloni-promeni {
+    font-size: small;
+    padding: 10px 18px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .tabela-korisnika thead tr td {
+    padding: 5px 5px;
+    font-size: small;
+  }
+
+  .tabela-korisnika tbody tr td {
+    padding: 2px 4px;
+    font-size: x-small;
+  }
+
+  .btn-ukloni-promeni {
+    font-size: x-small;
+    padding: 2px 4px;
+  }
 }

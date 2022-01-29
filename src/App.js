@@ -8,6 +8,8 @@ import { HeaderComponent } from './HeaderComponent'
 import {NoviKursComponent} from './NoviKursComponent'
 import { KorpaComponent } from './KorpaComponent'
 import { KorisniciComponent } from './KorisniciComponent'
+import { RegistracijaComponent } from './RegistracijaComponent'
+import { LoginComponent } from './LoginComponent';
 
 function App() {
 
@@ -17,6 +19,10 @@ function App() {
   const [korisnici, setKorinsici] = useState([])
   const firestoreKorisniciCollectionRef = collection(db, "korisnici")
   const [refreshKorisnike, setRefreshKorisnike] = useState(0)
+  const [loginPopup, setLoginPopup] = useState(false)
+  const [prijavljeniKorisnik, setPrijavljeniKorisnik] = useState({})
+
+
   useEffect(() => {
 
     const funk = async () => {
@@ -50,11 +56,13 @@ function App() {
 
   return (
     <div className="App">
-      <HeaderComponent />
+      <HeaderComponent loginPopupState={[loginPopup, setLoginPopup]} prijavljeniKorisnikState={[prijavljeniKorisnik, setPrijavljeniKorisnik]}/>
+      <LoginComponent triggered={loginPopup} setTriggered={setLoginPopup} prosledjeniKorisnici={[korisnici, setKorinsici]} prijavljeniKorisnikState = {[prijavljeniKorisnik, setPrijavljeniKorisnik]}/>
+
       <Router>
         <Switch>
           <Route path="/" exact >
-            <SviKurseviComponent prosledjenaKorpa={[korpa, setKorpa]} prosledjeniKursevi={[kursevi, setKursevi]} />
+            <SviKurseviComponent prijavljeniKorisnikState={[prijavljeniKorisnik, setPrijavljeniKorisnik]} prosledjenaKorpa={[korpa, setKorpa]} prosledjeniKursevi={[kursevi, setKursevi]} />
           </Route>
           <Route path="/novikurs" exact >
             <NoviKursComponent />
@@ -64,6 +72,9 @@ function App() {
           </Route>
           <Route path="/korisnici" exact >
             <KorisniciComponent obnoviKorisnike={[refreshKorisnike, setRefreshKorisnike]} firestoreKorisniciCollectionRef={firestoreKorisniciCollectionRef} prosledjeniKorisnici={[korisnici, setKorinsici]} />
+          </Route>
+          <Route path="/registracija" exact >
+            <RegistracijaComponent obnoviKorisnike={[refreshKorisnike, setRefreshKorisnike]} />
           </Route>
         </Switch>
       </Router>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { db } from './firebase-config'
 import { collection, addDoc } from "firebase/firestore";
-import './NoviKurs.css';
+import './NoviKursIKorisnik.css';
 
 export const NoviKursComponent = () => {
 
