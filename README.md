@@ -1,4 +1,4 @@
-# Covid-19 Vaccination website
+# Online Courses website
 
 React project made for course WD at Faculty of Technical Sciences Novi Sad, 1st year
 
