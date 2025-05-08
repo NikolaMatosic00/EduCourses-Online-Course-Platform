@@ -1,8 +1,12 @@
-# Online Courses website
+# EduCourses – Online Course Platform
 
-React project made for course WD at Faculty of Technical Sciences Novi Sad, 1st year
+EduCourses is a web application designed for browsing and enrolling in online courses, developed using modern web technologies.
 
-## Project structure
+## 🛠️ Technologies Used
 
-React
-Firestore basic CRUD
+- **Frontend**: React, TypeScript
+- **Backend**: Firebase Authentication, Firestore Database
+
+## 🚀 How to Run
+
+1. Clone the repository:
